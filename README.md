@@ -1,10 +1,10 @@
 # Example how to mount overlayfs without root permission in a user(+mount) namespace and run arbitrary commands in the user(+mount) namespace
 
-First we create a user and mount namespace where we are mapped to root ie. have all capabilities.
+First we create a user and mount namespace where we are mapped to root i.e. have all capabilities.
 To keep the namespace alive, we need a dummy process running (an infinite sleep loop).
 
 ```
-./control.sh create_ns # mainly an unshare call
+./control.sh create_ns # an unshare call
 ps # this shows ns_dummy.sh and sleep running
 ```
 
@@ -38,7 +38,7 @@ exit # leave the nested namespace
 ps # should be only the shell and ps now
 ```
 
-##Problems
+## Problems
 
 `./control.sh run firefox` sees the overlayfs, but an unwrapped firefox doesn't.
 
